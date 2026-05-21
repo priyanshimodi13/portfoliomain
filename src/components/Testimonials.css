@@ -1,0 +1,50 @@
+.testi__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.testi-card {
+  background: var(--color-bg-subtle);
+  padding: 60px;
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.testi-card__quote-icon {
+  font-family: var(--font-heading);
+  font-size: 80px;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: -20px;
+  opacity: 0.5;
+}
+
+.testi-card__text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.testi-card__name {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.testi-card__role {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 900px) {
+  .testi__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,139 @@
+.skills__header {
+  margin-bottom: 80px;
+}
+
+.skills__layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 100px;
+  align-items: flex-start;
+}
+
+.skills__list {
+  border-top: 1px solid var(--color-border);
+}
+
+.skills__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skills__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+  text-align: left;
+  gap: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.skills__number {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.skills__title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex: 1;
+  letter-spacing: -0.02em;
+}
+
+.skills__plus {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus-h, .plus-v {
+  position: absolute;
+  background: var(--color-text);
+  border-radius: 2px;
+}
+
+.plus-h { width: 100%; height: 2px; }
+.plus-v { width: 2px; height: 100%; }
+
+.skills__body {
+  overflow: hidden;
+}
+
+.skills__inner {
+  padding-bottom: 40px;
+  padding-left: 46px;
+}
+
+.skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.skill-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+}
+
+.skills__visual-wrap {
+  position: sticky;
+  top: 100px;
+  padding-top: 60px;
+}
+
+.skills__3d-card {
+  width: 100%;
+  aspect-ratio: 0.7;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+  will-change: transform;
+}
+
+.skills__3d-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.skills__3d-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .skills__layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .skills__visual-wrap {
+    display: none;
+  }
+}

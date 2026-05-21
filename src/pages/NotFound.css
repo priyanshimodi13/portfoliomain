@@ -1,0 +1,3 @@
+.notfound { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.notfound__code { font-size: 120px; font-weight: 900; color: var(--color-bg-muted); display: block; }
+.notfound__title { margin: 24px 0 40px; }

@@ -1,0 +1,55 @@
+.career {
+  background: var(--color-bg);
+}
+
+.career__header {
+  margin-bottom: 60px;
+}
+
+.career__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.career__item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.career__item:last-child {
+  border-bottom: none;
+}
+
+.career__years {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  width: 120px;
+}
+
+.career__info {
+  flex: 1;
+}
+
+.career__title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.career__company {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .career__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 32px 0;
+  }
+}

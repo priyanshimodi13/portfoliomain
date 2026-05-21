@@ -1,0 +1,9 @@
+.awards__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.awards__date { width: 120px; font-size: 14px; color: var(--color-text-muted); }
+.awards__title { flex: 1; font-weight: 700; }
+.awards__platform { font-size: 14px; font-weight: 600; color: var(--color-text-secondary); }

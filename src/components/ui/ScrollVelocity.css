@@ -1,0 +1,42 @@
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroller {
+  display: flex;
+  white-space: nowrap;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.5rem; /* Balanced mobile size */
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+.scroller span {
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .scroller {
+    font-size: 2.5rem; /* Reduced from 5rem to look elegant and balanced (no longer "zoomed") */
+    line-height: 3.8rem;
+  }
+}
+
+.scroll-velocity-skill {
+  margin: 0 45px; /* Large beautiful gap between all skills */
+}
+
+.scroll-velocity-bullet {
+  color: #00f3ff;
+  opacity: 0.7;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .scroll-velocity-skill {
+    margin: 0 20px; /* Responsive smaller gap on mobile */
+  }
+}
