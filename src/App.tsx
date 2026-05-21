@@ -6,6 +6,7 @@ import { Header } from "./components/ui/header-2";
 import ContactSection from "./components/Sections/ContactSection";
 import Lenis from 'lenis';
 import HeroSection from "./components/Sections/HeroSection";
+import AboutSection from "./components/Sections/AboutSection";
 import ProjectsSection from "./components/Sections/ProjectsSection";
 import SkillsSection from "./components/Sections/SkillsSection";
 import FeaturedProjects from "./components/Sections/FeaturedProjects";
@@ -35,10 +36,10 @@ const App = () => {
 
     // Section exit transitions: blurs and fades out the section as it exits the viewport
     const setupSectionExitBlurAnimations = () => {
-      // 1. Hero to Projects transition
+      // 1. Hero to About transition
       const heroWrapper = heroRef.current;
-      const projectsWrapper = document.querySelector('[data-snap-section="projects"]');
-      if (heroWrapper && projectsWrapper) {
+      const aboutWrapper = document.querySelector('[data-snap-section="about"]');
+      if (heroWrapper && aboutWrapper) {
         const heroContent = heroWrapper.firstElementChild;
         if (heroContent) {
           gsap.fromTo(heroContent, 
@@ -49,7 +50,7 @@ const App = () => {
               yPercent: 30,
               ease: "none",
               scrollTrigger: {
-                trigger: projectsWrapper,
+                trigger: aboutWrapper,
                 start: "top 100%",
                 end: "top 0%",
                 scrub: true
@@ -59,7 +60,8 @@ const App = () => {
         }
       }
 
-      // 2. Projects to Skills transition
+      // 2. About to Projects transition
+      setupNormalTransition('about', 'projects');
       // const skillsWrapper = document.querySelector('[data-snap-section="skills"]');
       // if (projectsWrapper && skillsWrapper) {
       //   const projectsSticky = projectsWrapper.querySelector('.projects-sticky-container');
@@ -274,6 +276,11 @@ const App = () => {
             }>
               <HeroSection />
             </Suspense>
+          </div>
+
+          {/* About Section */}
+          <div data-snap-section="about" className="section" style={{ position: 'relative', zIndex: 15, minHeight: '100vh', background: '#050505', padding: 0 }}>
+            <AboutSection />
           </div>
 
           {/* Projects Section — Interactive Tunnel */}
