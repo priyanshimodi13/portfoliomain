@@ -64,10 +64,22 @@ export function Header() {
 							href={link.href}
 							onClick={(e) => {
 								e.preventDefault();
-								if ((window as any).lenis) {
-									(window as any).lenis.scrollTo(link.href);
+								const targetId = link.href;
+								if (targetId === '#home') {
+									if ((window as any).lenis) {
+										(window as any).lenis.scrollTo(0, { duration: 1.2 });
+									} else {
+										window.scrollTo({ top: 0, behavior: 'smooth' });
+									}
 								} else {
-									document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+									const targetElement = document.querySelector(targetId);
+									if (targetElement) {
+										if ((window as any).lenis) {
+											(window as any).lenis.scrollTo(targetElement, { duration: 1.2 });
+										} else {
+											targetElement.scrollIntoView({ behavior: 'smooth' });
+										}
+									}
 								}
 							}}
 						>
@@ -114,11 +126,26 @@ export function Header() {
 								onClick={(e) => {
 									e.preventDefault();
 									setOpen(false);
-									if ((window as any).lenis) {
-										(window as any).lenis.scrollTo(link.href);
-									} else {
-										document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
-									}
+									const targetId = link.href;
+									// Use setTimeout to allow the mobile menu to close and scroll lock to lift
+									setTimeout(() => {
+										if (targetId === '#home') {
+											if ((window as any).lenis) {
+												(window as any).lenis.scrollTo(0, { duration: 1.2 });
+											} else {
+												window.scrollTo({ top: 0, behavior: 'smooth' });
+											}
+										} else {
+											const targetElement = document.querySelector(targetId);
+											if (targetElement) {
+												if ((window as any).lenis) {
+													(window as any).lenis.scrollTo(targetElement, { duration: 1.2 });
+												} else {
+													targetElement.scrollIntoView({ behavior: 'smooth' });
+												}
+											}
+										}
+									}, 50);
 								}}
 								className={cn(buttonVariants({
 									variant: 'ghost',
