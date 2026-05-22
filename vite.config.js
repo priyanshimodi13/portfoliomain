@@ -16,15 +16,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // Split heavy libraries into separate chunks so they load on demand
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('three')) return 'three';
-            if (id.includes('gsap')) return 'gsap';
-            if (id.includes('react')) return 'react-vendor';
-            return 'vendor';
-          }
-        },
+        // Use default chunking
       },
     },
     chunkSizeWarningLimit: 800,
